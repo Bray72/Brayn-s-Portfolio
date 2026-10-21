@@ -166,6 +166,20 @@ section {
   animation: fade-in 500ms linear forwards;
 }
 
+.hero-image-container {
+  display: none;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: var(--secondary-color);
+}
+
+.hero-image-container img {
+  display: block;
+  width: min(100%, 360px);
+  height: auto;
+  border-radius: 50%;
+}
+
 .hero-text-container > h3 {
   font-size: 40px;
   color: var(--accent-1);
@@ -178,6 +192,7 @@ section {
 
 .hero-button {
   align-self: flex-start;
+  width: fit-content;
 
   font-size: 14px;
   padding: 1em;
@@ -489,6 +504,16 @@ footer {
   /* hero */
   .hero-container {
     height: 350px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(240px, 360px);
+    align-items: center;
+  }
+
+  .hero-image-container {
+    display: block;
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    margin-right: 4vw;
   }
 
   .hero-text-container > p {
